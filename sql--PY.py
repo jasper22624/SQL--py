@@ -6,10 +6,10 @@ import sqlite3
 
 
 def print_cars():
-    db=sqlite3.connect('SQL--py.db')
-    cursor=db.cursor()
+    db = sqlite3.connect('SQL--py.db')
+    cursor = db.cursor()
     cursor.execute('select name,top_speed,horsepower,makers.maker_name from cars join makers on cars.maker_id = makers.maker_id order by name;')
-    result=cursor.fetchall()
+    result = cursor.fetchall()
     print(" ______________________________________________________________________________")
     print("|name                               |topspeed|horsepower|  maker               |")
     for i in result:
@@ -19,10 +19,10 @@ def print_cars():
 
 
 def print_cars_by_topspeed():
-    db=sqlite3.connect('SQL--py.db')
-    cursor=db.cursor()
+    db = sqlite3.connect('SQL--py.db')
+    cursor = db.cursor()
     cursor.execute('select name,top_speed,horsepower,makers.maker_name from cars join makers on cars.maker_id = makers.maker_id order by top_speed desc;')
-    result=cursor.fetchall()
+    result = cursor.fetchall()
     print(" ______________________________________________________________________________")
     print("|name                               |topspeed|horsepower|  maker               |")
     for i in result:
@@ -32,10 +32,10 @@ def print_cars_by_topspeed():
 
 
 def print_cars_by_horsepower():
-    db=sqlite3.connect('SQL--py.db')
-    cursor=db.cursor()
+    db = sqlite3.connect('SQL--py.db')
+    cursor = db.cursor()
     cursor.execute('select name,top_speed,horsepower,makers.maker_name from cars join makers on cars.maker_id = makers.maker_id order by horsepower desc;')
-    result=cursor.fetchall()
+    result = cursor.fetchall()
     print(" ______________________________________________________________________________")
     print("|name                               |topspeed|horsepower|  maker               |")
     for i in result:
